@@ -276,7 +276,7 @@ public class XPAndroid extends Activity  {
 		BufferedReader reader = null;
 		String result = null;
 		try {
-			String timeStamp = SignatureUtils.getTimeStamp();
+			String timeStamp = SignatureUtils.getTimeStamp("c.zhiboyun.com", Config.serviceCode);
 			String url_str = "http://c.zhiboyun.com" + uri + "?"
 					+ "service_code=" + code;
 			xvs_signature = SignatureUtils.getSignature(secret_key, uri, code,
@@ -390,7 +390,7 @@ public class XPAndroid extends Activity  {
 			// Manager.uploadVideoFile(..., false)
 			// 第二个参数为 false代表新上传一个文件, 服务器总是将上传的数据存为一个新的视频文件
 			// 第二个参数为 true 代表续传
-			if (!Manager.uploadVideoFile(file_name, requestCode == 1)) {
+			if (!Manager.uploadVideoFile(file_name, requestCode == 1, null)) {
 				// todo 错误处理
 				Log.w(TAG, "Upload file failed.");
 			}

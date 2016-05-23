@@ -10,7 +10,6 @@ import org.json.JSONObject;
 
 import cn.com.xpai4glass.Config;
 import cn.com.xpai.core.AHandler;
-import cn.com.xpai.core.Const;
 import cn.com.xpai.core.Manager;
 import cn.com.xpai.core.RecordMode;
 import cn.com.xpai.core.Manager.Resolution;
@@ -549,5 +548,23 @@ public class XPHandler extends AHandler {
 			XPHandler.getInstance().sendMessage(msg);
 			Log.w(TAG, "can't zoomIn or zoomOut");
 		}
+	}
+
+	@Override
+	public boolean onResumeLiveFail(int code) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onTryResumeLive() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onResumeLiveOk() {
+		// TODO Auto-generated method stub
+		
 	}
 }
