@@ -145,7 +145,7 @@ public class XPHandler extends AHandler {
 				Log.i(TAG, String.format("support %dx%d", size.width, size.height));
 			}
 			if (Manager.setVideoResolution(Config.videoWidth, Config.videoHeight)) {
-				Manager.startRecord(RecordMode.HwAudioAndVideo,
+				Manager.startRecord(Config.recordMode,
 						Config.videoBitRate * 1024,
 						true, false, null, null);
 			}
